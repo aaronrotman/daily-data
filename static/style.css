@@ -1,0 +1,19 @@
+#header-footer {
+    background-color: rgb(95, 55, 187);
+    color: white;
+}
+
+#github-footer-logo {
+    height: 5em;
+    width: 5em;
+    padding: 1em;
+}
+
+.card-header {
+    width: 100%;
+}
+
+.card {
+    margin: 1em;
+}
+
