@@ -1,1 +1,1 @@
-FLASK_APP=daily_data/app.py flask run
+FLASK_APP=app.py flask run
