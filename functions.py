@@ -3,10 +3,15 @@ import requests
 import json
 from datetime import time
 import os
+
+# LOCAL DEPLOYMENT
+# Import config variables from local config file
 # import etherscan_key, alphavantage_key
 
+# HEROKU DEPLOYMENT
+# Get config variables from Heroku config variables
 etherscan_key = os.environ.get('etherscan_key')
-alphavantage_key = ('alphavantage_key')
+alphavantage_key = os.environ.get('alphavantage_key')
 
 # Function to return current Ethereum gas data
 def get_gas_data():
