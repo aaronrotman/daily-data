@@ -2,7 +2,8 @@
 import requests
 import json
 from datetime import time
-from config import etherscan_key, alphavantage_key
+# from config import etherscan_key, alphavantage_key
+
 
 # Function to return current Ethereum gas data
 def get_gas_data():
