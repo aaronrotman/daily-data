@@ -1,1 +1,1 @@
-web: gunicorn daily-data.app:app
+web: gunicorn app:app
