@@ -85,3 +85,19 @@ def get_stock_data(ticker):
             "volume": "Data Unavailable"    
         }
         return stock_dict
+
+
+# Function to return the remaining supply of Gods Unchained genesis chests
+def get_chest_supply(contract_address):
+    try:
+        chest_supply_url = f"https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress={contract_address}&apikey={etherscan_key}"
+        chest_response = requests.get(chest_supply_url)
+        chest_data = json.loads(chest_response.text)
+        chest_supply = chest_data["result"]
+        return chest_supply
+
+    # Handle api call failures
+    except Exception as e:
+        print(e)
+        chest_supply = "Data unavailable"
+        return chest_supply
