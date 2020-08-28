@@ -1,12 +1,12 @@
 # Dependencies
 import requests
 import json
-from datetime import time
+from datetime import datetime
 import os
 
 # LOCAL DEPLOYMENT
 # Import config variables from local config file
-# import etherscan_key, alphavantage_key
+# from config import etherscan_key, alphavantage_key
 
 # HEROKU DEPLOYMENT
 # Get config variables from Heroku config variables
@@ -44,9 +44,14 @@ def get_eth_price():
         eth_response = requests.get(eth_price_url)
         eth_price = json.loads(eth_response.text)
         eth_result = eth_price["result"]
+
+        # Convert timestamp into a string
+        epoch_time = eth_result["ethusd_timestamp"]
+        string_time = datetime.fromtimestamp(epoch_time).strftime('%c')
+
         eth_dict = {
             "eth_usd": eth_result["ethusd"],
-            "time": eth_result["ethusd_timestamp"]
+            "time": string_time
         }
         return eth_dict
 
