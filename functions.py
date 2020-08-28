@@ -46,8 +46,8 @@ def get_eth_price():
         eth_result = eth_price["result"]
 
         # Convert timestamp into a string
-        epoch_time = eth_result["ethusd_timestamp"]
-        string_time = datetime.fromtimestamp(epoch_time).strftime('%c')
+        epoch_time = int(eth_result["ethusd_timestamp"])
+        string_time = datetime.fromtimestamp(epoch_time).strftime('%X')
 
         eth_dict = {
             "eth_usd": eth_result["ethusd"],
