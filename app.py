@@ -1,8 +1,5 @@
 # Dependencies
 from flask import Flask, render_template
-# import requests
-# import json
-# from config import etherscan_key
 
 # Import function to return Ethereum gas data
 from functions import get_gas_data, get_eth_price, get_stock_data, get_chest_supply
