@@ -19,11 +19,11 @@ def get_gas_data():
         query_url = f"https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey={etherscan_key}"
         gas_response = requests.get(query_url)
         gas_price = json.loads(gas_response.text)
-        results = gas_price["result"]
+        results = gas_price['result']
         gas_dict = {
-            "last_block": results["LastBlock"],
-            "safe_gas": results["SafeGasPrice"],
-            "propose_gas": results["ProposeGasPrice"]
+            "last_block": results['LastBlock'],
+            "safe_gas": f"{results['SafeGasPrice']} gwei",
+            "propose_gas": f"{results['ProposeGasPrice']} gwei"
         }
         return gas_dict
 
@@ -43,14 +43,14 @@ def get_eth_price():
         eth_price_url = f"https://api.etherscan.io/api?module=stats&action=ethprice&apikey={etherscan_key}"
         eth_response = requests.get(eth_price_url)
         eth_price = json.loads(eth_response.text)
-        eth_result = eth_price["result"]
+        eth_result = eth_price['result']
 
         # Convert timestamp into a string
-        epoch_time = int(eth_result["ethusd_timestamp"])
+        epoch_time = int(eth_result['ethusd_timestamp'])
         string_time = datetime.fromtimestamp(epoch_time).strftime('%X')
 
         eth_dict = {
-            "eth_usd": eth_result["ethusd"],
+            "eth_usd": f"${eth_result['ethusd']}",
             "time": string_time
         }
         return eth_dict
@@ -72,15 +72,15 @@ def get_stock_data(ticker):
         stock_price = json.loads(stock_response.text)
         stock_result = stock_price["Global Quote"]
         stock_dict = {
-            "ticker": stock_result["01. symbol"],
-            "price": stock_result["05. price"],
-            "open": stock_result["02. open"],
-            "daily_high": stock_result["03. high"], 
-            "daily_low": stock_result["04. low"], 
-            "last_close": stock_result["08. previous close"],
-            "change": stock_result["09. change"],
-            "change_percent": stock_result["10. change percent"],
-            "volume": stock_result["06. volume"]     
+            "ticker": stock_result['01. symbol'],
+            "price": f"${stock_result['05. price']}",
+            "open": f"${stock_result['02. open']}",
+            "daily_high": f"${stock_result['03. high']}", 
+            "daily_low": f"${stock_result['04. low']}", 
+            "last_close": f"${stock_result['08. previous close']}",
+            "change": f"${stock_result['09. change']}",
+            "change_percent": stock_result['10. change percent'],
+            "volume": stock_result['06. volume']     
         }
         return stock_dict
 
