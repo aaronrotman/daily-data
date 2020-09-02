@@ -38,6 +38,15 @@ def index():
 # Gods Unchained route
 @app.route('/gods_unchained')
 def gu_page():
+
+    # Get Ethereum gas data
+    gas_data = get_gas_data()
+    print(f"Last Block: {gas_data['last_block']} | Safe Gas Price: {gas_data['safe_gas']} | Propose Gas Price: {gas_data['propose_gas']}")
+    
+    # Get Ethereum price data
+    eth_data = get_eth_price()
+    print(f"Ethereum Price: {eth_data['eth_usd']} | Time: {eth_data['time']}")
+
     # Rare genesis chest contract address
     rare_chest_addr = "0xee85966b4974d3c6f71a2779cc3b6f53afbc2b68"
     # Legendary genesis chest contract address
@@ -59,7 +68,7 @@ def gu_page():
     }
     
     # Render the index page template
-    return render_template("gu_page.html", meta=meta, chests=chest_dict)
+    return render_template("gu_page.html", meta=meta, chests=chest_dict, gas=gas_data, eth_data=eth_data)
 
 # NOTE: Set debug=False for production deployment
 # Run the application
