@@ -74,6 +74,35 @@
             </div>
           </div>
         </div>
+        <!-- Ethereum Data Column -->
+        <div class="col-md-4 text-center">
+          <div class="card" id="crypto-card">
+            <h5 class="card-header" id="card-header-footer">Ethereum (ETH)</h5>
+            <div class="card-body">
+              <div class="row">
+                <!-- Ethereum Gas Data -->
+                <div class="col-6">
+                  <h5 class="card-title">Safe Gas:</h5>
+                  <p class="card-text">{{ gas['safe_gas'] }}</p>
+                  <h5 class="card-title">Propose Gas:</h5>
+                  <p class="card-text">{{ gas['propose_gas'] }}</p>
+                  <h5 class="card-title">Last Block:</h5>
+                  <p class="card-text">{{ gas['last_block'] }}</p>
+                </div>
+                <!-- Ethereum Price Data -->
+                <div class="col-6">
+                  <h5 class="card-title">Current Price:</h5>
+                  <p class="card-text">{{ eth_data['eth_usd'] }}</p>
+                  <h5 class="card-title">Last Updated:</h5>
+                  <p class="card-text">{{ eth_data['time'] }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" id="card-header-footer">
+              <p id="source-attribution">Data provided by <a href="https://etherscan.io/" target="_blank">Etherscan</a>.</p>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
