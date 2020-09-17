@@ -4,14 +4,19 @@ import json
 from datetime import datetime
 import os
 
+# ------------------------------------------------------------
 # LOCAL DEPLOYMENT
 # Import config variables from local config file
 # from config import etherscan_key, alphavantage_key
+# ------------------------------------------------------------
 
+# ------------------------------------------------------------
 # HEROKU DEPLOYMENT
 # Get config variables from Heroku config variables
 etherscan_key = os.environ.get('etherscan_key')
 alphavantage_key = os.environ.get('alphavantage_key')
+# ------------------------------------------------------------
+
 
 # Function to return current Ethereum gas data
 def get_gas_data():
@@ -50,7 +55,7 @@ def get_eth_price():
         string_time = datetime.fromtimestamp(epoch_time).strftime('%X')
 
         eth_dict = {
-            "eth_usd": f"${eth_result['ethusd']}",
+            "eth_usd": eth_result['ethusd'],
             "time": string_time
         }
         return eth_dict
@@ -115,3 +120,19 @@ def get_chest_supply(contract_address):
         print(e)
         chest_supply = "Data unavailable"
         return chest_supply
+
+
+# Function to return the address balance for the Gods Unchained season 1 card sale
+def get_address_balance(address):
+    try:
+        address_balance_url = f"https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey={etherscan_key}"
+        address_balance_response = requests.get(address_balance_url)
+        balance_data = json.loads(address_balance_response.text)
+        address_balance = float(balance_data["result"])/1000000000000000000
+        return address_balance
+    
+    # Handle api call failures
+    except Exception as e:
+        print(e)
+        address_balance = "Data Unavailable"
+        return address_balance

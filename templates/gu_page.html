@@ -63,9 +63,9 @@
                 <!-- Chest Supply Data -->
                 <div class="col-12">
                   <h5 class="card-title">Rare Chests:</h5>
-                  <p class="card-text">{{ chests['rare'] }}</p>
+                  <p class="card-text">{{ data['rare'] }}</p>
                   <h5 class="card-title">Legendary Chests:</h5>
-                  <p class="card-text">{{ chests['legendary'] }}</p>
+                  <p class="card-text">{{ data['legendary'] }}</p>
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@
         <!-- Ethereum Data Column -->
         <div class="col-md-4 text-center">
           <div class="card" id="crypto-card">
-            <h5 class="card-header" id="card-header-footer">Ethereum (ETH)</h5>
+            <h3 class="card-header" id="card-header-footer">Ethereum (ETH)</h3>
             <div class="card-body">
               <div class="row">
                 <!-- Ethereum Gas Data -->
@@ -103,6 +103,26 @@
             </div>
           </div>
         </div>
+        <!-- Season 1 Sales Data Column -->
+        <div class="col-md-4 text-center">
+          <div class="card" id="crypto-card">
+            <h3 class="card-header" id="card-header-footer">Season 1 Total Sales</h3>
+            <div class="card-body">
+              <div class="row">
+                <!-- Season 1 Total Sales Data -->
+                <div class="col-12">
+                  <h5 class="card-title">Total Sales (ETH)</h5>
+                  <p class="card-text">{{ data['s1_sales'] }}</p>
+                  <h5 class="card-title">Total Sales (USD Value)</h5>
+                  <p class="card-text">{{ data['s1_sales_value'] }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" id="card-header-footer">
+              <p id="source-attribution">Data provided by <a href="https://etherscan.io/" target="_blank">Etherscan</a>.</p>
+            </div>
+          </div>
+        </div>        
 
       </div>
     </div>
