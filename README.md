@@ -1,3 +1,13 @@
 # daily-data
-A personal dashboard to gather and display data in one convenient location.
+A dashboard to gather and display stock and cryptocurrency data in one convenient location.
+
+# Tools used
+* API interactions
+* Python
+* Flask
+* Bootstrap 
+* HTML
+* CSS
+
+
 [View dashboard!](https://aarons-dashboard.herokuapp.com/)
