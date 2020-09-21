@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="format-detection" content="telephone=no">
+    <!-- Favicon image for title bar -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'images/Aa.jpg') }}" type="image/gif">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Custom CSS -->
@@ -151,6 +153,207 @@
             </div>
           </div>
         </div>
+
+      </div>
+      <div class="row">
+        <!-- Ethereum Data Column -->
+        <div class="col-md-4 text-center">
+          <div class="card" id="crypto-card">
+            <h5 class="card-header" id="card-header-footer">Ethereum (ETH)</h5>
+            <div class="card-body">
+              <div class="row">
+                <!-- Ethereum Gas Data -->
+                <div class="col-6">
+                  <h5 class="card-title">Safe Gas:</h5>
+                  <p class="card-text">{{ gas['safe_gas'] }}</p>
+                  <h5 class="card-title">Propose Gas:</h5>
+                  <p class="card-text">{{ gas['propose_gas'] }}</p>
+                  <h5 class="card-title">Last Block:</h5>
+                  <p class="card-text">{{ gas['last_block'] }}</p>
+                </div>
+                <!-- Ethereum Price Data -->
+                <div class="col-6">
+                  <h5 class="card-title">Current Price:</h5>
+                  <p class="card-text">{{ eth_data['eth_usd'] }}</p>
+                  <h5 class="card-title">Last Updated:</h5>
+                  <p class="card-text">{{ eth_data['time'] }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" id="card-header-footer">
+              <p id="source-attribution">Data provided by <a href="https://etherscan.io/" target="_blank">Etherscan</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stock Market Data Column -->
+        <div class="col-md-4 text-center">
+          <div class="card" id="crypto-card">
+            <h5 class="card-header" id="card-header-footer">Vanguard Total Stock Market ETF (VTI)</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="card-title">Ticker:</h5>
+                  <p class="card-text">{{ stock_data['ticker'] }}</p>
+                  <h5 class="card-title">Change:</h5>
+                  <p class="card-text">{{ stock_data['change'] }}</p>
+                  <h5 class="card-title">High:</h5>
+                  <p class="card-text">{{ stock_data['daily_high'] }}</p>
+                  <h5 class="card-title">Previous Close:</h5>
+                  <p class="card-text">{{ stock_data['last_close'] }}</p>                 
+                </div>
+                <div class="col-6">
+                  <h5 class="card-title">Price:</h5>
+                  <p class="card-text">{{ stock_data['price'] }}</p>  
+                  <h5 class="card-title">% Change:</h5>
+                  <p class="card-text">{{ stock_data['change_percent'] }}</p> 
+                  <h5 class="card-title">Low:</h5>
+                  <p class="card-text">{{ stock_data['daily_low'] }}</p>                                                   
+                  <h5 class="card-title">Open:</h5>
+                  <p class="card-text">{{ stock_data['open'] }}</p>                
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" id="card-header-footer">
+              <p id="source-attribution">Data provided by <a href="https://www.alphavantage.co/" target="_blank">Alpha Vantage</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bond Market Data Column -->
+        <div class="col-md-4 text-center">
+          <div class="card md-4" id="crypto-card">
+            <h5 class="card-header" id="card-header-footer">Vanguard Total Bond Market ETF (BND)</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="card-title">Ticker:</h5>
+                  <p class="card-text">{{ bond_data['ticker'] }}</p>
+                  <h5 class="card-title">Change:</h5>
+                  <p class="card-text">{{ bond_data['change'] }}</p>
+                  <h5 class="card-title">High:</h5>
+                  <p class="card-text">{{ bond_data['daily_high'] }}</p>
+                  <h5 class="card-title">Previous Close:</h5>
+                  <p class="card-text">{{ bond_data['last_close'] }}</p>                 
+                </div>
+                <div class="col-6">
+                  <h5 class="card-title">Price:</h5>
+                  <p class="card-text">{{ bond_data['price'] }}</p>  
+                  <h5 class="card-title">% Change:</h5>
+                  <p class="card-text">{{ bond_data['change_percent'] }}</p> 
+                  <h5 class="card-title">Low:</h5>
+                  <p class="card-text">{{ bond_data['daily_low'] }}</p>                                                   
+                  <h5 class="card-title">Open:</h5>
+                  <p class="card-text">{{ bond_data['open'] }}</p>                
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" id="card-header-footer">
+              <p id="source-attribution">Data provided by <a href="https://www.alphavantage.co/" target="_blank">Alpha Vantage</a>.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <!-- Ethereum Data Column -->
+        <div class="col-md-4 text-center">
+          <div class="card" id="crypto-card">
+            <h5 class="card-header" id="card-header-footer">Ethereum (ETH)</h5>
+            <div class="card-body">
+              <div class="row">
+                <!-- Ethereum Gas Data -->
+                <div class="col-6">
+                  <h5 class="card-title">Safe Gas:</h5>
+                  <p class="card-text">{{ gas['safe_gas'] }}</p>
+                  <h5 class="card-title">Propose Gas:</h5>
+                  <p class="card-text">{{ gas['propose_gas'] }}</p>
+                  <h5 class="card-title">Last Block:</h5>
+                  <p class="card-text">{{ gas['last_block'] }}</p>
+                </div>
+                <!-- Ethereum Price Data -->
+                <div class="col-6">
+                  <h5 class="card-title">Current Price:</h5>
+                  <p class="card-text">{{ eth_data['eth_usd'] }}</p>
+                  <h5 class="card-title">Last Updated:</h5>
+                  <p class="card-text">{{ eth_data['time'] }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" id="card-header-footer">
+              <p id="source-attribution">Data provided by <a href="https://etherscan.io/" target="_blank">Etherscan</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stock Market Data Column -->
+        <div class="col-md-4 text-center">
+          <div class="card" id="crypto-card">
+            <h5 class="card-header" id="card-header-footer">Vanguard Total Stock Market ETF (VTI)</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="card-title">Ticker:</h5>
+                  <p class="card-text">{{ stock_data['ticker'] }}</p>
+                  <h5 class="card-title">Change:</h5>
+                  <p class="card-text">{{ stock_data['change'] }}</p>
+                  <h5 class="card-title">High:</h5>
+                  <p class="card-text">{{ stock_data['daily_high'] }}</p>
+                  <h5 class="card-title">Previous Close:</h5>
+                  <p class="card-text">{{ stock_data['last_close'] }}</p>                 
+                </div>
+                <div class="col-6">
+                  <h5 class="card-title">Price:</h5>
+                  <p class="card-text">{{ stock_data['price'] }}</p>  
+                  <h5 class="card-title">% Change:</h5>
+                  <p class="card-text">{{ stock_data['change_percent'] }}</p> 
+                  <h5 class="card-title">Low:</h5>
+                  <p class="card-text">{{ stock_data['daily_low'] }}</p>                                                   
+                  <h5 class="card-title">Open:</h5>
+                  <p class="card-text">{{ stock_data['open'] }}</p>                
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" id="card-header-footer">
+              <p id="source-attribution">Data provided by <a href="https://www.alphavantage.co/" target="_blank">Alpha Vantage</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bond Market Data Column -->
+        <div class="col-md-4 text-center">
+          <div class="card md-4" id="crypto-card">
+            <h5 class="card-header" id="card-header-footer">Vanguard Total Bond Market ETF (BND)</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="card-title">Ticker:</h5>
+                  <p class="card-text">{{ bond_data['ticker'] }}</p>
+                  <h5 class="card-title">Change:</h5>
+                  <p class="card-text">{{ bond_data['change'] }}</p>
+                  <h5 class="card-title">High:</h5>
+                  <p class="card-text">{{ bond_data['daily_high'] }}</p>
+                  <h5 class="card-title">Previous Close:</h5>
+                  <p class="card-text">{{ bond_data['last_close'] }}</p>                 
+                </div>
+                <div class="col-6">
+                  <h5 class="card-title">Price:</h5>
+                  <p class="card-text">{{ bond_data['price'] }}</p>  
+                  <h5 class="card-title">% Change:</h5>
+                  <p class="card-text">{{ bond_data['change_percent'] }}</p> 
+                  <h5 class="card-title">Low:</h5>
+                  <p class="card-text">{{ bond_data['daily_low'] }}</p>                                                   
+                  <h5 class="card-title">Open:</h5>
+                  <p class="card-text">{{ bond_data['open'] }}</p>                
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" id="card-header-footer">
+              <p id="source-attribution">Data provided by <a href="https://www.alphavantage.co/" target="_blank">Alpha Vantage</a>.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
     <!-- FOOTER -->
