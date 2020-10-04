@@ -1,4 +1,4 @@
-# daily-data
+# Daily Data
 A dashboard to gather and display stock and cryptocurrency data in one convenient location.
 
 # Tools used
@@ -8,6 +8,5 @@ A dashboard to gather and display stock and cryptocurrency data in one convenien
 * Bootstrap 
 * HTML
 * CSS
-
 
 [View dashboard!](https://aarons-dashboard.herokuapp.com/)
