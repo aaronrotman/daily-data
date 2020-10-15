@@ -2,14 +2,16 @@
 A dashboard to gather and display stock and cryptocurrency data in one convenient location.
 
 ## Tools used
-* API interactions
 * Python
 * Flask
+* APIs
+* Heroku
 * Bootstrap 
 * HTML
 * CSS
 
-## View Dashboard
+
+## View Dashboard:
 [https://aarons-dashboard.herokuapp.com/](https://aarons-dashboard.herokuapp.com/)
 
 ## Data Sources:
