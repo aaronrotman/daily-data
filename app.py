@@ -61,11 +61,10 @@ def gu_page():
     legendary_chests = get_chest_supply(legendary_chest_addr)
 
     # Get Season 1 total sales data
-    s1_sales_total = round(get_address_balance(s1_sales_addr), 3)
+    s1_sales_total = get_address_balance(s1_sales_addr)
     eth_price = eth_data['eth_usd']
     s1_sales = float(eth_price) * float(s1_sales_total)
-    s1_sales_rounded = round(s1_sales, 2)
-    s1_sales_value = f"${s1_sales_rounded}"
+    s1_sales_value = f"${s1_sales}"
     
     # Print chest counts
     print(f"Rare Chest Supply: {rare_chests} | Legendary Chest Supply: {legendary_chests} | Total Sales: {s1_sales_total} | Total Sale Value: {s1_sales_value}")

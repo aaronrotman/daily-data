@@ -15,13 +15,14 @@ setInterval(() => {
     var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
+        
     // Display the time remaining in the countdown row
     document.getElementById("countDown").innerHTML = `Shadow Draw Countdown: ${days}D ${hours}H ${minutes}M ${seconds}S`;
-        
+
     // Display a message if the countdown is complete 
     if (timeLeft < 0) {
-        clearInterval(x);
+        clearInterval();
         document.getElementById("countDown").innerHTML = "The shadow draw has ended!";
-    }    
+    }  
+
 }, 1000);
