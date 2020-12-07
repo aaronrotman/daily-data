@@ -1,2 +1,5 @@
 # Config file
 config.py
+
+# Environment variables
+.env
