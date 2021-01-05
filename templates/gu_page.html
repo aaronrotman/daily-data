@@ -68,16 +68,23 @@
       <div class="row">
         <!-- Chest Data Column -->
         <div class="col-md-4 text-center">
-          <div class="card" id="crypto-card">
+          <div class="card" id="chest-card">
             <h3 class="card-header" id="card-header-footer">Genesis Chests</h3>
             <div class="card-body">
               <div class="row">
-                <!-- Chest Supply Data -->
-                <div class="col-12">
-                  <h5 class="card-title">Rare Chests:</h5>
-                  <p class="card-text">{{ data['rare'] }}</p>
-                  <h5 class="card-title">Legendary Chests:</h5>
-                  <p class="card-text">{{ data['legendary'] }}</p>
+                <!-- Rare Chests -->
+                <div class="col-6">
+                  <h5 class="card-title">Rare: {{ data['rare'] }}</h5>
+                  <div class="text-center">
+                    <img src="../static/images/trial_rare_chest.png" alt="Card image" style="width: 10rem;">
+                  </div>
+                </div>
+                <!-- Legendary Chests -->
+                <div class="col-6">
+                  <h5 class="card-title">Legendary: {{ data['legendary'] }}</h5>
+                  <div class="text-center">
+                    <img src="../static/images/trial_legendary_chest.png" alt="Card image" style="width: 10rem;">
+                  </div>
                 </div>
               </div>
             </div>
